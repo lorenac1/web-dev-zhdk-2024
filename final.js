@@ -94,6 +94,8 @@ function fetchAccessToken() {
     });
 }
 
+//BUTTONS RIGHT AND LEFT
+
 fetchAccessToken();
 
 // Scroll button functionality remains unchanged
