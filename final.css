@@ -23,11 +23,16 @@
     display: flex; /* Use flexbox to layout children in a row */
   }
 
-  
   .playlist li {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* flex-direction:row; */
+    /* align-items: center; */
     padding-top: 50px;
     padding-right: 1em;
+    /* inline-size: 600px; */
+    word-break: break-all;
   }
 
   .album {
@@ -54,16 +59,20 @@
   p{
     font-weight: bold;
     font-size: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 300px;
+    
     color: yellow;
+    margin-top: 10px; /* Space between image and text */
+    text-align: center; Center text
+    max-width: 700px;
     /* mix-blend-mode: difference; */
   }
 
+  
   img {
     border-radius: 16px; /* Add border radius of 16px to images */
-  }
+    height: 600px; /* Ensure the image height is as needed */
+  width: 600px; /* Ensure the image width is as needed */
+}
 
   .content {
     display: flex;
@@ -125,13 +134,7 @@
     background-color: rgba(255, 255, 255, 0.8);
   }
  
-  #scrollLeftButton{
-    
-    right: auto;
-    ;
-  }
-
   #scrollLeftButton {
-  
-    left: auto;
+    right: auto;
+    left: 20px; /* Position the button on the left */
   }
