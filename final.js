@@ -4,9 +4,7 @@ const PLAYLIST_ID = "0EQAoKj5GHNrTxQByO03NE?si=02877923dc964489";
 const container = document.querySelector('div[data-js="tracks"]');
 
 function fetchPlaylist(token, playlistId) {
-  console.log("token: ", token);
-
-  fetch(`https://api.spotify.com/v1/playlists/${PLAYLIST_ID}`, {
+  fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -14,13 +12,7 @@ function fetchPlaylist(token, playlistId) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-
       if (data.tracks && data.tracks.items) {
-        data.tracks.items.forEach((item) => {
-          console.log(item.track.name);
-        });
-
         addTracksToPage(data.tracks.items);
       }
     })
@@ -31,31 +23,15 @@ function fetchPlaylist(token, playlistId) {
 
 function addTracksToPage(items) {
   const ul = document.createElement("ul");
- 
-
   items.forEach((item) => {
-    console.log("track: ", item.track);
     const li = document.createElement("li");
-
     const albumImageUrl = item.track.album.images[0].url;
-    
-
     li.innerHTML = `
-    <img src="${albumImageUrl}" alt="Album cover" style="width: 700px; height: 700px;">
-          <p>${item.track.name} by ${item.track.artists
-      .map((artist) => artist.name)
-      .join(", ")}</p>
-          ${
-            item.track.preview_url
-              ? `<audio controls src="${item.track.preview_url}"></audio>`
-              : "<p>No preview available</p>"
-              
-          }
-        `;
-
+      <img src="${albumImageUrl}" alt="Album cover" style="width: 500px; height: 500px; border-radius: 16px;">
+      <p>${item.track.name} by ${item.track.artists.map((artist) => artist.name).join(", ")}</p>
+      <audio controls src="${item.track.preview_url}"></audio>
+    `;
     ul.appendChild(li);
-
-    
   });
   container.appendChild(ul);
 }
@@ -70,10 +46,8 @@ function fetchAccessToken() {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.access_token) {
         fetchPlaylist(data.access_token, PLAYLIST_ID);
-
       }
     })
     .catch((error) => {
@@ -82,3 +56,20 @@ function fetchAccessToken() {
 }
 
 fetchAccessToken();
+
+// Scroll button functionality
+document.getElementById('scrollRightButton').addEventListener('click', () => {
+  document.getElementById('main').scrollBy({
+    top: 0,
+    left: 300,
+    behavior: 'smooth'
+  });
+});
+
+document.getElementById('scrollLeftButton').addEventListener('click', () => {
+  document.getElementById('main').scrollBy({
+    top: 0,
+    left: -300,
+    behavior: 'smooth'
+  });
+});
