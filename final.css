@@ -37,12 +37,24 @@ body {
   flex-direction: column;
   padding-left:0; /* Adjusted padding */
   padding-right: 1em; /* Reduced padding-right */
-  width: 40vw;
+  width: 30vw;
   overflow: hidden;
   word-break: break-all;
   padding: 0;
+  /* justify-content: space-between;
+  align-items: stretch; */
 }
 
+/* .li{
+  display: flex;
+  justify-content: space-between; */
+  /* align-items: stretch; */
+
+}
+
+.playlist{
+  padding: 0;
+}
 
 .height {
   display: block;
@@ -62,7 +74,7 @@ p {
 
 img {
   border-radius: 16px;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .content {
@@ -73,6 +85,7 @@ img {
   flex: 0 1 50%;
   padding: 0;
 }
+
 
 .scroll-button {
   position: fixed;
@@ -100,8 +113,6 @@ img {
   left: 20px;
 }
 
-
-
 .tit {
   position: -webkit-sticky;
   position: sticky;
@@ -124,9 +135,10 @@ h2 {
   font-size: 70px;
   text-transform: uppercase;
   letter-spacing: -3px;
+  padding-bottom: 0;
   transition: 700ms ease;
   font-variation-settings: "wght" 311;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0rem;
   color: aquamarine;
   outline: none;
 }
@@ -138,12 +150,12 @@ h2:hover {
 
 .genre-container {
   display: flex; 
-  justify-content: center;
+  justify-content:flex-start;
   /* align-items: stretch; */
   /* justify-content: space-between; */
   flex-wrap: wrap;
   gap: 10px;
-  padding-left: 0;
+  padding-left: ;
  
 }
 
@@ -166,4 +178,12 @@ h2:hover {
 .overview-button:hover {
   background-color: aquamarine;
   color: blueviolet;
+}
+
+.buttons-container{
+  display: flex;
+  align-items: stretch;
+  padding: 10px;
+  /* margin: 10px; */
+
 }

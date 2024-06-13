@@ -31,7 +31,7 @@ function addTracksToPage(items) {
   const ul = document.createElement("ul");
   items.forEach((item) => {
     const li = document.createElement("li");
-    const albumImageUrl = item.track.album.images[0].url;
+    const albumImageUrl = item.track.album.images[0].url; 
     li.innerHTML = `
       <img src="${albumImageUrl}" alt="Album cover">
       <p>${item.track.name} by ${item.track.artists
