@@ -2,6 +2,10 @@ const SPOTIFY_CLIENT_ID = "67b411e20d594f30bf7a8d3bbde54285";
 const SPOTIFY_CLIENT_SECRET = "161fc5e3df004b95af3ba8c62f3eaf54";
 const PLAYLIST_ID = "0EQAoKj5GHNrTxQByO03NE?si=02877923dc964489";
 const container = document.querySelector('div[data-js="tracks"]');
+const genreContainer = document.querySelector('.genre-container');
+const allSongsButton = document.getElementById('allSongsButton');
+
+let allTracksData = []; // Store all tracks data globally
 
 function fetchPlaylist(token, playlistId) {
   fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
@@ -13,7 +17,9 @@ function fetchPlaylist(token, playlistId) {
     .then((response) => response.json())
     .then((data) => {
       if (data.tracks && data.tracks.items) {
-        addTracksToPage(data.tracks.items);
+        allTracksData = data.tracks.items; // Store all tracks data globally
+        addTracksToPage(allTracksData); // Display all tracks initially
+        createArtistButtons(allTracksData); // Create artist buttons
       }
     })
     .catch((error) => {
@@ -35,7 +41,38 @@ function addTracksToPage(items) {
     `;
     ul.appendChild(li);
   });
+  container.innerHTML = ''; // Clear existing content
   container.appendChild(ul);
+}
+
+function createArtistButtons(items) {
+  const artists = new Set();
+  items.forEach((item) => {
+    item.track.artists.forEach((artist) => {
+      artists.add(artist.name);
+    });
+  });
+
+  artists.forEach((artist) => {
+    const button = document.createElement("button");
+    button.textContent = artist;
+    button.addEventListener("click", () => {
+      filterTracksByArtist(artist);
+    });
+    genreContainer.appendChild(button);
+  });
+}
+
+function filterTracksByArtist(artistName) {
+  const filteredTracks = allTracksData.filter((item) => {
+    return item.track.artists.some((artist) => artist.name === artistName);
+  });
+
+  addTracksToPage(filteredTracks);
+}
+
+function showAllSongs() {
+  addTracksToPage(allTracksData);
 }
 
 function fetchAccessToken() {
@@ -59,7 +96,7 @@ function fetchAccessToken() {
 
 fetchAccessToken();
 
-// Scroll button functionality
+// Scroll button functionality remains unchanged
 document.getElementById("scrollRightButton").addEventListener("click", () => {
   document.getElementById("main").scrollBy({
     top: 0,
@@ -74,4 +111,9 @@ document.getElementById("scrollLeftButton").addEventListener("click", () => {
     left: -300,
     behavior: "smooth",
   });
+});
+
+// Event listener for "Show All Songs" button
+allSongsButton.addEventListener("click", () => {
+  showAllSongs();
 });
