@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url("https://i.pinimg.com/736x/c6/1f/3d/c61f3d6af740b289428ac80991c7351d.jpg");
+  background-image: url("https://t4.ftcdn.net/jpg/02/98/80/07/360_F_298800775_4F0sCYMANxWZw8ms7MJffNnAkpyDdVJX.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -64,11 +64,11 @@ body {
 p {
   font-family: "Courier Prime", monospace;
   font-weight: regular;
-  font-size: 1.5rem;
-  color: aquamarine;
-  margin-top: 10px;
+  font-size: 1rem;
+  color: blue;
+  /* margin-top: 10px; */
   text-align: left;
-  width: 100%;
+  /* width: 100%; */
   white-space: normal;
 }
 
@@ -96,7 +96,7 @@ img {
   font-size: 2em;
   cursor: pointer;
   border-radius: 8px;
-  color: aquamarine;
+  color: blue;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -104,8 +104,8 @@ img {
 }
 
 .scroll-button:hover {
-  background-color: aquamarine;
-  color:blueviolet;
+  background-color: transparent;
+  color:yellow;
 }
 
 #scrollLeftButton {
@@ -139,8 +139,9 @@ h2 {
   transition: 700ms ease;
   font-variation-settings: "wght" 311;
   margin-bottom: 0rem;
-  color: aquamarine;
+  color: blue;
   outline: none;
+  
 }
 
 h2:hover {
@@ -155,7 +156,7 @@ h2:hover {
   /* justify-content: space-between; */
   flex-wrap: wrap;
   gap: 10px;
-  padding-left: ;
+
  
 }
 
@@ -165,7 +166,7 @@ h2:hover {
   border: 0px solid transparent;
   border-radius: 8px;
   cursor:grab;
-  color: aquamarine;
+  color: blue;
   border-radius: 8px;
   font-family: "Courier Prime", monospace;
   background: rgba(255, 255, 255, 0.2);
@@ -176,8 +177,8 @@ h2:hover {
 
 .genre-container button:hover,
 .overview-button:hover {
-  background-color: aquamarine;
-  color: blueviolet;
+  background-color: yellow;
+  color: blue;
 }
 
 .buttons-container{
