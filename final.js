@@ -45,6 +45,9 @@ function addTracksToPage(items) {
   container.appendChild(ul);
 }
 
+
+// createArtistButtons(items): This function creates artist filter buttons based on the unique artists found in the items array.
+
 function createArtistButtons(items) {
   const artists = new Set();
   items.forEach((item) => {
@@ -63,6 +66,8 @@ function createArtistButtons(items) {
   });
 }
 
+//filterTracksByArtist(artistName): This function filters allTracksData to find tracks by a specific artistName and updates the displayed tracks on the page using addTracksToPage.
+
 function filterTracksByArtist(artistName) {
   const filteredTracks = allTracksData.filter((item) => {
     return item.track.artists.some((artist) => artist.name === artistName);
@@ -71,6 +76,7 @@ function filterTracksByArtist(artistName) {
   addTracksToPage(filteredTracks);
 }
 
+//showAllSongs(): This function displays all tracks (allTracksData) on the page by calling addTracksToPage(allTracksData).
 function showAllSongs() {
   addTracksToPage(allTracksData);
 }
@@ -115,6 +121,8 @@ document.getElementById("scrollLeftButton").addEventListener("click", () => {
   });
 });
 
+
+//allSongsButton: This is a reference to a button element with the ID allSongsButton, which will trigger the display of all songs when clicked.
 // Event listener for "Show All Songs" button
 allSongsButton.addEventListener("click", () => {
   showAllSongs();
