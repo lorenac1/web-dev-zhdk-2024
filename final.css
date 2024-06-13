@@ -1,140 +1,179 @@
 * {
-    font-family: Helvetica;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  body{
-    background-image: url("https://i.pinimg.com/736x/c6/1f/3d/c61f3d6af740b289428ac80991c7351d.jpg");
-    background-size: cover; /* Cover the entire background with the image */
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
- 
-  #main {
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent line breaks within the container */
-  }
-
-  .playlist ul {
-    display: flex; /* Use flexbox to layout children in a row */
-  }
-
-  .playlist li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* flex-direction:row; */
-    /* align-items: center; */
-    padding-top: 50px;
-    padding-right: 1em;
-    /* inline-size: 600px; */
-    word-break: break-all;
-  }
-
-  .album {
-    display: inline-block;
-    padding-right: 1em;
-  }
-
-  .height{
-    display: block;
-    height: 50px;
-  }
-
-
-  h1{
-    font-size: 5rem;
-    position: fixed;
-    left: 0;
-    color: white;
-    background-color: transparent;
-    mix-blend-mode: difference;
-  }
-
-
-  p{
-    font-weight: bold;
-    font-size: 2rem;
-    
-    color: yellow;
-    margin-top: 10px; /* Space between image and text */
-    text-align: center; Center text
-    max-width: 700px;
-    /* mix-blend-mode: difference; */
-  }
-
-  
-  img {
-    border-radius: 16px; /* Add border radius of 16px to images */
-    height: 600px; /* Ensure the image height is as needed */
-  width: 600px; /* Ensure the image width is as needed */
+  font-family: Helvetica;
+  list-style: none;
+  padding: 10;
+  margin: 5
+  ;
 }
 
-  .content {
-    display: flex;
-  }
-  
-  .flex-item {
-    flex: 0 1 50%;
-  }
-  
-  .player-control {
-    background-color: transparent;
-    border: 0;
-  }
-  
-  .player-control:hover {
-    cursor: pointer;
-    color: grey;
-  }
-  
-  .player-control:hover img {
-    transform: scale(1.3);
-  }
-  
-  .player-control img {
-    height: 20px;
-    width: 20px;
-    transition: all 0.3s;
-  }
-  
-  .toggle {
-    color: red;
-  }
-  
-  .toggle.playing {
-    color: blue;
-  }
-  
+body {
+  background-image: url("https://i.pinimg.com/736x/c6/1f/3d/c61f3d6af740b289428ac80991c7351d.jpg");
+  background-size: cover; /* Cover the entire background with the image */
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  .scroll-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    
-    /* color: #fff; */
-    border: none;
-    padding: 10px 20px;
-    font-size: 2em;
-    cursor: pointer;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    
-    
+}
+
+.rubik-mono-one-regular {
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#main {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks within the container */
+}
+
+.playlist ul {
+  display: flex; /* Use flexbox to layout children in a row */
+}
+
+.playlist li {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* flex-direction:row; */
+  /* align-items: center; */
+  padding-top: 50px;
+  padding-right: 2em;
+  width: 40vw;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.album {
+  display: inline-block;
+  padding-right: 1em;
+}
+
+.height {
+  display: block;
+  height: 100px;
+}
+
+/* h1 {
+  font-size: 5rem;
+  position: fixed;
+  left: 0;
+  color: white;
+  background-color: transparent;
+  mix-blend-mode: difference;
+} */
+
+p {
+  font-weight: bold;
+  font-size: 2rem;
+
+  color: yellow;
+  margin-top: 10px; /* Space between image and text */
+  /* Center text */
+  text-align: left;
+  width: 100%;
+  white-space: normal; /* Allow text to wrap within the container */
+  /* mix-blend-mode: difference; */
+}
+
+img {
+  border-radius: 16px; /* Add border radius of 16px to images */
+  /* height: 600px; 
+  width: 600px; */
+  width: 100%;
+}
+
+.content {
+  display: flex;
+}
+
+.flex-item {
+  flex: 0 1 50%;
+}
+/* 
+.player-control {
+  background-color: transparent;
+  border: 0;
+}
+
+.player-control:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+.player-control:hover img {
+  transform: scale(1.3);
+}
+
+.player-control img {
+  height: 20px;
+  width: 20px;
+  transition: all 0.3s;
+} */
+
+/* .toggle {
+  color: red;
+}
+
+.toggle.playing {
+  color: blue;
+} */
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  /* color: #fff; */
+  border: none;
+  padding: 10px 20px;
+  font-size: 2em;
+  cursor: pointer;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.scroll-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#scrollLeftButton {
+  right: auto;
+  left: 20px; /* Position the button on the left */
+}
+
+
+
+  .tit {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
-  .scroll-button:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+  h2 {
+    font-family: "Rubik Mono One", monospace;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 70px;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    transition: 700ms ease;
+    font-variation-settings: "wght" 311;
+    margin-bottom: 0.8rem;
+    color: PaleGoldenRod;
+    outline: none;
+    text-align: center;
   }
- 
-  #scrollLeftButton {
-    right: auto;
-    left: 20px; /* Position the button on the left */
+  
+  h2:hover {
+    font-variation-settings: "wght" 582; 
+    letter-spacing: 1px;
   }
+  

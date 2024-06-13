@@ -27,8 +27,10 @@ function addTracksToPage(items) {
     const li = document.createElement("li");
     const albumImageUrl = item.track.album.images[0].url;
     li.innerHTML = `
-      <img src="${albumImageUrl}" alt="Album cover" style="width: 600px; height: 600px; border-radius: 16px;">
-      <p>${item.track.name} by ${item.track.artists.map((artist) => artist.name).join(", ")}</p>
+      <img src="${albumImageUrl}" alt="Album cover">
+      <p>${item.track.name} by ${item.track.artists
+      .map((artist) => artist.name)
+      .join(", ")}</p>
       <audio controls src="${item.track.preview_url}"></audio>
     `;
     ul.appendChild(li);
@@ -58,18 +60,18 @@ function fetchAccessToken() {
 fetchAccessToken();
 
 // Scroll button functionality
-document.getElementById('scrollRightButton').addEventListener('click', () => {
-  document.getElementById('main').scrollBy({
+document.getElementById("scrollRightButton").addEventListener("click", () => {
+  document.getElementById("main").scrollBy({
     top: 0,
     left: 300,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
 });
 
-document.getElementById('scrollLeftButton').addEventListener('click', () => {
-  document.getElementById('main').scrollBy({
+document.getElementById("scrollLeftButton").addEventListener("click", () => {
+  document.getElementById("main").scrollBy({
     top: 0,
     left: -300,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
 });
