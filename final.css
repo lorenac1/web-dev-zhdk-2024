@@ -2,13 +2,13 @@
   font-family: Helvetica;
   list-style: none;
   padding: 10;
-  margin: 5
+  margin: 0;
   ;
 }
 
 body {
   background-image: url("https://i.pinimg.com/736x/c6/1f/3d/c61f3d6af740b289428ac80991c7351d.jpg");
-  background-size: cover; /* Cover the entire background with the image */
+  background-size: cover; Cover the entire background with the image
   background-position: center;
   display: flex;
   flex-direction: column;
@@ -16,8 +16,19 @@ body {
 
 }
 
-.rubik-mono-one-regular {
-  font-family: "Rubik Mono One", monospace;
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+/* .tourney-<uniquifier> {
+  font-family: "Tourney", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
+.courier-prime-regular {
+  font-family: "Courier Prime", monospace;
   font-weight: 400;
   font-style: normal;
 }
@@ -37,7 +48,7 @@ body {
   /* align-items: center; */
   /* flex-direction:row; */
   /* align-items: center; */
-  padding-top: 50px;
+  padding-top: 30px;
   padding-right: 2em;
   width: 40vw;
   overflow: hidden;
@@ -51,7 +62,7 @@ body {
 
 .height {
   display: block;
-  height: 100px;
+  height: 50px;
 }
 
 /* h1 {
@@ -64,10 +75,11 @@ body {
 } */
 
 p {
-  font-weight: bold;
-  font-size: 2rem;
+  font-family: "Courier Prime", monospace;
+  font-weight: regular;
+  font-size: 1.5rem;
 
-  color: yellow;
+  color:  aquamarine;
   margin-top: 10px; /* Space between image and text */
   /* Center text */
   text-align: left;
@@ -90,7 +102,111 @@ img {
 .flex-item {
   flex: 0 1 50%;
 }
-/* 
+
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  /* color: #fff; */
+  border: none;
+  padding: 10px 20px;
+  font-size: 2em;
+  cursor: pointer;
+  border-radius: 8px;
+  color: blue;
+  background: rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.scroll-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#scrollLeftButton {
+  right: auto;
+  left: 20px; /* Position the button on the left */
+}
+
+.tit {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  right: 0;
+  width: auto; /* Adjusted width to auto */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+  
+h2 {
+  font-family: "Tourney", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  position: fixed;
+  padding-left: 30px;
+  /* top: 0;
+  right: 0; Added right position */ 
+  font-size: 70px;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  color: aquamarine;
+  outline: none;
+}
+
+
+  
+  h2:hover {
+    font-variation-settings: "wght" 582; 
+    letter-spacing: 1px;
+  }
+  
+
+
+/*new code*/
+.genre-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.genre-container button {
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid aquamarine;
+  border-radius: 5px;
+  cursor: pointer;
+  color: aquamarine;
+  font-family: "Courier Prime", monospace;
+}
+
+.genre-container button:hover {
+  background-color: aquamarine;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 
 .player-control {
   background-color: transparent;
   border: 0;
@@ -118,62 +234,3 @@ img {
 .toggle.playing {
   color: blue;
 } */
-
-.scroll-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-
-  /* color: #fff; */
-  border: none;
-  padding: 10px 20px;
-  font-size: 2em;
-  cursor: pointer;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
-
-.scroll-button:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-#scrollLeftButton {
-  right: auto;
-  left: 20px; /* Position the button on the left */
-}
-
-
-
-  .tit {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  h2 {
-    font-family: "Rubik Mono One", monospace;
-    position: fixed;
-    top: 0;
-    left: 0;
-    font-size: 70px;
-    text-transform: uppercase;
-    letter-spacing: -3px;
-    transition: 700ms ease;
-    font-variation-settings: "wght" 311;
-    margin-bottom: 0.8rem;
-    color: PaleGoldenRod;
-    outline: none;
-    text-align: center;
-  }
-  
-  h2:hover {
-    font-variation-settings: "wght" 582; 
-    letter-spacing: 1px;
-  }
-  

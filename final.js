@@ -3,6 +3,59 @@ const SPOTIFY_CLIENT_SECRET = "161fc5e3df004b95af3ba8c62f3eaf54";
 const PLAYLIST_ID = "0EQAoKj5GHNrTxQByO03NE?si=02877923dc964489";
 const container = document.querySelector('div[data-js="tracks"]');
 
+
+function fetchGenres(token) {
+  fetch('https://api.spotify.com/v1/recommendations/available-genre-seeds', {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.genres) {
+      createGenreButtons(data.genres);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
+
+function createGenreButtons(genres) {
+  const genreContainer = document.createElement('div');
+  genreContainer.classList.add('genre-container');
+  genres.forEach(genre => {
+    const button = document.createElement('button');
+    button.innerText = genre;
+    button.addEventListener('click', () => filterTracksByGenre(genre));
+    genreContainer.appendChild(button);
+  });
+  document.body.insertBefore(genreContainer, document.getElementById('main'));
+}
+
+function filterTracksByGenre(genre) {
+  fetch(`https://api.spotify.com/v1/recommendations?seed_genres=${genre}`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.tracks) {
+      addTracksToPage(data.tracks);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
+
+
+//new code
+
+
 function fetchPlaylist(token, playlistId) {
   fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
     method: "GET",
