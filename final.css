@@ -11,7 +11,8 @@ body {
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 0;
 }
 
 .courier-prime-regular {
@@ -28,16 +29,18 @@ body {
 
 .playlist ul {
   display: flex;
+  padding: 0;
 }
 
 .playlist li {
   display: flex;
   flex-direction: column;
-  padding-top: 0px; /* Adjusted padding */
+  padding-left:0; /* Adjusted padding */
   padding-right: 1em; /* Reduced padding-right */
   width: 40vw;
   overflow: hidden;
   word-break: break-all;
+  padding: 0;
 }
 
 
@@ -68,6 +71,7 @@ img {
 
 .flex-item {
   flex: 0 1 50%;
+  padding: 0;
 }
 
 .scroll-button {
@@ -79,7 +83,7 @@ img {
   font-size: 2em;
   cursor: pointer;
   border-radius: 8px;
-  color: blue;
+  color: aquamarine;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -87,13 +91,16 @@ img {
 }
 
 .scroll-button:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: aquamarine;
+  color:blueviolet;
 }
 
 #scrollLeftButton {
   right: auto;
   left: 20px;
 }
+
+
 
 .tit {
   position: -webkit-sticky;
@@ -109,12 +116,11 @@ img {
 h2 {
   font-family: "Tourney", sans-serif;
   display: flex;
+  
   align-items: stretch;
   font-optical-sizing: auto;
-  font-weight: 100;
-  /* position:; */
-  padding-left: 30px;
-  padding-bottom: 0px;
+  /* padding-left: 30px;
+  padding-bottom: 0px; */
   font-size: 70px;
   text-transform: uppercase;
   letter-spacing: -3px;
@@ -132,22 +138,21 @@ h2:hover {
 
 .genre-container {
   display: flex; 
+  justify-content: center;
   /* align-items: stretch; */
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-wrap: wrap;
   gap: 10px;
-  padding: 10px;
+  padding-left: 0;
  
 }
 
 .genre-container button,
 .overview-button {
-  padding: 10px 15px;
   width: 150px; /* Fixed width for all buttons */
-  /* background-color: rgba(255, 255, 255, 0.2); */
   border: 0px solid transparent;
   border-radius: 8px;
-  cursor: pointer;
+  cursor:grab;
   color: aquamarine;
   border-radius: 8px;
   font-family: "Courier Prime", monospace;

@@ -1,50 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lorena's Spotify</title>
-    <script src="final.js" defer></script>
     <link rel="stylesheet" href="final.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <!-- Add this container for genre buttons -->
-    <body>
-      <!-- Add this container for genre buttons -->
-      <div class="genre-container">
-        <div> <h2 contenteditable>spotify</h2></div>
-        <div>
-  
-        <button id="allSongsButton" class="overview-button">Show All Songs</button> 
-        <!-- Artist buttons will be dynamically inserted here -->
+    <div class="genre-container">
+      <h2 contenteditable>spotify</h2>
+      <div class="buttons-container">
+        <button id="allSongsButton" class="overview-button">
+          Show All Songs
+        </button>
+        <!-- Other buttons dynamically inserted here -->
       </div>
-    
-      <!-- Rest of your existing HTML content -->
-    </body>
-    
-      <!-- Genre buttons will be dynamically inserted here -->
     </div>
 
     <div id="main">
       <div class="playlist">
-        <div class="height">
-          <!-- <h1>Spotify playlist</h1> -->
-          <div class="tit">
-           
-          </div>
-        </div>
+        <div class="height"></div>
         <div class="content">
           <div class="current-track flex-item"></div>
           <div data-js="tracks" class="flex-item">
@@ -53,7 +36,10 @@
         </div>
       </div>
     </div>
+
     <button id="scrollLeftButton" class="scroll-button scroll-left">←</button>
     <button id="scrollRightButton" class="scroll-button scroll-right">→</button>
+
+    <script src="final.js" defer></script>
   </body>
 </html>
