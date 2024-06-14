@@ -1,42 +1,194 @@
-.part1{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+* {
+  font-family: Helvetica;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
 }
 
-.middlepart {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 60px;
+body {
+  background-image: url("https://t4.ftcdn.net/jpg/02/98/80/07/360_F_298800775_4F0sCYMANxWZw8ms7MJffNnAkpyDdVJX.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
 }
 
-.end {
-    display: flex;
-    justify-content: center;
+.courier-prime-regular {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.where {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
+#main {
+  overflow-x: auto;
+  padding: 0;
+  /* white-space: nowrap; */
 }
 
-#logo{
-    width: 150px;
-    height: 150px;
+.playlist ul {
+  display: flex;
+  padding: 0;
+}
+
+.playlist li {
+  display: flex;
+  flex-direction: column;
+  padding-left:0; /* Adjusted padding */
+  padding-right: 1em; /* Reduced padding-right */
+  width: 30vw;
+  overflow: hidden;
+  word-break: break-all;
+  padding: 0;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+
+.playlist{
+  padding: 0;
+}
+
+.height {
+  display: block;
+  height: 0px;
+}
+
+p {
+  font-family: "Courier Prime", monospace;
+  font-weight: regular;
+  font-size: 1rem;
+  color: blue;
+  /* margin-top: 10px; */
+  text-align: left;
+  /* width: 100%; */
+  white-space: normal;
+}
+
+img {
+  border-radius: 16px;
+  /* width: 100%; */
+}
+
+.content {
+  display: flex;
+}
+
+.flex-item {
+  flex: 0 1 50%;
+  padding: 0;
+}
+
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 2em;
+  cursor: pointer;
+  border-radius: 8px;
+  color: blue;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.scroll-button:hover {
+  background-color: transparent;
+  color:yellow;
+  
 
 }
 
-#tier{
-    width: 251.5px;
-    height: 141.5px;
+#scrollLeftButton {
+  right: auto;
+  left: 20px;
 }
 
-.look{
-    display: flex;
-flex-direction: column;
-    align-content: space-between;
-    gap:80px;
+.scroll-button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+
+.tit {
+  position: -webkit-sticky;
+  position: sticky;
+  /* top: 0;
+  right: 0;
+  width: auto;
+  height: 100vh;
+  display: flex;*/
+  flex-direction: column; 
+}
+
+h2 {
+  font-family: "Tourney", sans-serif;
+  display: flex;
+  
+  align-items: stretch;
+  font-optical-sizing: auto;
+  /* padding-left: 30px;
+  padding-bottom: 0px; */
+  font-size: 70px;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  padding-bottom: 0;
+  transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0rem;
+  color: blue;
+  outline: none;
+  
+}
+
+h2:hover {
+  font-variation-settings: "wght" 582;
+  letter-spacing: 1px;
+}
+
+.genre-container {
+  display: flex; 
+  justify-content:flex-start;
+  /* align-items: stretch; */
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  gap: 10px;
+
+ 
+}
+
+.genre-container button,
+.overview-button {
+  width: 150px; /* Fixed width for all buttons */
+  border: 0px solid transparent;
+  border-radius: 8px;
+  cursor:grab;
+  color: blue;
+  border-radius: 8px;
+  font-family: "Courier Prime", monospace;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(5px); */
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.genre-container button:hover,
+.overview-button:hover {
+  background-color: yellow;
+  color: blue;
+}
+
+.buttons-container{
+  display: flex;
+  align-items: stretch;
+  padding: 10px;
+  /* margin: 10px; */
+
+}
