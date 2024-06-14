@@ -50,18 +50,24 @@ function addTracksToPage(items) {
 
 function createArtistButtons(items) {
   const artists = new Set();
+  //array
   items.forEach((item) => {
     item.track.artists.forEach((artist) => {
+      //adds the name
       artists.add(artist.name);
     });
   });
 
+
   artists.forEach((artist) => {
     const button = document.createElement("button");
+    //Sets the button's text to the artist's name.
     button.textContent = artist;
+    //Adds a click event listener to the button
     button.addEventListener("click", () => {
       filterTracksByArtist(artist);
     });
+    // Appends the button to the genreContainer element in the DOM
     genreContainer.appendChild(button);
   });
 }
@@ -69,7 +75,9 @@ function createArtistButtons(items) {
 //filterTracksByArtist(artistName): This function filters allTracksData to find tracks by a specific artistName and updates the displayed tracks on the page using addTracksToPage.
 
 function filterTracksByArtist(artistName) {
+  //all.... Filters the allTracksData array to include only the items that meet the specified condition.
   const filteredTracks = allTracksData.filter((item) => {
+    // Checks if at least one artist in the track.artists array of the current item has a name that matches artistName. 
     return item.track.artists.some((artist) => artist.name === artistName);
   });
 
@@ -103,7 +111,9 @@ function fetchAccessToken() {
 //BUTTONS RIGHT AND LEFT
 
 fetchAccessToken();
-
+//code part 2
+//Scroll Right Button: When the button with the ID scrollRightButton is clicked, the main element will scroll 300 pixels to the right smoothly.
+//Scroll Left Button: When the button with the ID scrollLeftButton is clicked, the main element will scroll 300 pixels to the left smoothly.
 // Scroll button functionality remains unchanged
 document.getElementById("scrollRightButton").addEventListener("click", () => {
   document.getElementById("main").scrollBy({
